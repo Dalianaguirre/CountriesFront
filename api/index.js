@@ -18,11 +18,11 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+const { conn } = require('./src/db.js');       // conn traigo los modelos de sequelize
 
-// Syncing all the models at once.
+// Syncing all the models at once. sincronizo 
 conn.sync({ force: true }).then(() => {
   server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
+    console.log('server listening at 3001'); // eslint-disable-line no-console
   });
 });

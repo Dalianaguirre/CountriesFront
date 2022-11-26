@@ -11,12 +11,14 @@ sequelize.define('activity', {
   },
   difficulty: {
     type: DataTypes.ENUM('1','2','3','4','5'),
+    allowNull: true
   },
   duration: {
     type: DataTypes.STRING,
+    allowNull: true
   },
   season: {
-    type: DataTypes.ENUM('Summer', 'Autumn', 'Winter', 'Spring'),
+    type: DataTypes.ENUM('Winter', 'Summer', 'Autumn', 'Spring'),
     allowNull: true
   }
 });

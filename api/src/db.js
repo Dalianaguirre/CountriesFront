@@ -5,7 +5,7 @@ const path = require('path');
 const {
   DB_USER, DB_PASSWORD, DB_HOST,
 } = process.env;
-          //llamo la conexión a postgres con: usuario     contraseña      host   nombre de la bd
+          //llamo la conexión a postgres con: usuario    contraseña      host   nombre de la bd
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
@@ -32,12 +32,12 @@ sequelize.models = Object.fromEntries(capsEntries);
 // Para relacionarlos hacemos un destructuring
 const { Country, Activity } = sequelize.models;
 
-// Aca vendrian las relaciones
+// Relaciones
 // Product.hasMany(Reviews);
 Country.belongsToMany(Activity, { through: "country_activity" });  // country_activity---> tabla intermedia
 Activity.belongsToMany(Country, { through: "country_activity" });
 
 module.exports = {
-  ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
-  conn: sequelize,     // para importart la conexión { conn } = require('./db.js');
+  ...sequelize.models, // para poder importar los modelos así: const { Country, Activity } = require('./db.js');
+  conn: sequelize,     // para importar la conexión { conn } = require('./db.js');
 };

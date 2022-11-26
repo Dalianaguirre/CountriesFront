@@ -6,10 +6,10 @@ module.exports = (sequelize) => {
   // defino el modelo
 sequelize.define('country', {
   id: {
-    type: DataTypes.UUID,    //*UUID genera un número random único con numeros y letras, que no se repite*
-    defaultValue: DataTypes.UUIDV4,
-    allowNull: false,        //*allowNull--->permite que esté vacio. En false, no le permito xq es un campo requerido*
-    primaryKey: true         //*id de mi tabla country*
+    type: DataTypes.STRING(3),
+    unique: true,
+    allowNull: false,
+    primaryKey: true,               // id de mi tabla country
   },
   name: {
     type: DataTypes.STRING,
@@ -36,7 +36,7 @@ sequelize.define('country', {
     allowNull: true
   }, 
   population: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.NUMERIC,
     allowNull: true
   },
   createdInDb: {                 //*creado en bd.* llamado a solo lo que está en bd

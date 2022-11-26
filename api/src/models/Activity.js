@@ -5,6 +5,12 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
 sequelize.define('activity', { 
+  id: {
+    type: DataTypes.UUID,    //*UUID genera un número random único con numeros y letras, que no se repite*
+    defaultValue: DataTypes.UUIDV4,
+    allowNull: false,        //*allowNull--->permite que esté vacio. En false, no le permito xq es un campo requerido*
+    primaryKey: true         //*id de mi tabla*
+    },
   name: {
     type: DataTypes.STRING,
     allowNull: true

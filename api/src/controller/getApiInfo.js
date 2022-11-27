@@ -46,7 +46,7 @@ const getDbInfo = async () => {
             model: Activity,
             attributes: ['name', 'difficulty', 'duration', 'season'],
             through: {
-              attributes: [],
+              attributes: [],                 // no quiero info de la tabla intermedia
             }
           }
         })

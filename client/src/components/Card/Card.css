@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+.card {
+  margin: 4px;
+  background-color: #000d23dd;
+  border-radius: 6px;
+  box-shadow: 0 10px 27px #9a999983;
+  width: 250px;
+  height: 310px;
+  margin-bottom: 30px;
+}
+
+.cardHeader img {
+  border-radius: 10px;
+  margin-top: 5px;
+  width: 230px;
+  height: 140px;
+  object-fit: cover;
+  padding: 6px;
+}
+
+.span {
+  background-color: transparent;
+  border-style: none;
+  font-size: 26px;
+  color: rgba(255, 255, 255, 0.932);
+  font-family: "Patrick Hand", sans-serif;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+}
+
+.cardBody0 {
+  text-decoration: none;
+  position: center;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 28px;
+  align-items: center;
+  font-family: "Handlee", sans-serif;
+  color: rgba(255, 255, 255, 0.799);
+  font-size: 19px;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 0px;
+}
+
+.cardBody {
+  text-decoration: none;
+  position: center;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: auto;
+  align-items: center;
+  font-family: "Handlee", sans-serif;
+  color: rgba(255, 255, 255, 0.793);
+  font-size: 19px;
+  justify-content: center;
+  margin-top: 8px;
+  padding: 6px;
+}

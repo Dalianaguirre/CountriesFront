@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@700&display=swap');
 
 .body {
   padding: 0;
@@ -24,18 +25,33 @@
   display: table-cell;
 }
 
+.phrase {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  color: #fffffff8;
+  text-shadow: 8px 5px 8px #000000;
+  padding: 2px;
+  letter-spacing: 0.3px;
+  margin-left: 0px;
+  margin-top: -300px;
+  padding-bottom: 0px;
+}
+
 .content {
   max-width: 700px;
   margin: auto;
+  margin-top: 10px;
   text-align: center;
 }
 
 .content h1 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Passion One", sans-serif;
   font-size: 500%;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #ffffffef;
   text-shadow: 8px 5px 8px #000000;
+  margin-top: 20px;
 }
 
 .botton {
@@ -46,8 +62,8 @@
   font-weight: bold;
   border: 3px solid;
   padding: 7px 13px;
-  background-color: #040404d7; /*color botón*/
-  box-shadow: 2px 2px 8px 5px rgba(255, 255, 255, 0.46)
+  background-color: #07053ad7; /*color botón*/
+  box-shadow: 2px 2px 8px 5px rgba(0, 0, 0, 0.879)
 }
 
 .botton:hover {
@@ -56,14 +72,3 @@
   background-color: #ffffffe6;
 }
 
-.phrase {
-  font-family: "Roboto", sans-serif;
-  font-size: 20px;
-  font-style: italic;
-  color: #fffffff8;
-  text-shadow: 8px 2px 8px #000000;
-  padding: 2px;
-  letter-spacing: 0.3px;
-  margin-left: 0px;
-  margin-top: 300px;
-}

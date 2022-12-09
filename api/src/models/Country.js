@@ -7,8 +7,8 @@ module.exports = (sequelize) => {
 sequelize.define('country', {
   id: {
     type: DataTypes.STRING(3),
-    unique: true,
-    allowNull: false,
+    //unique: true,                     redundante
+    //allowNull: false,                 redundante
     primaryKey: true,               // id de mi tabla country
   },
   name: {

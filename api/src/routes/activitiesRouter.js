@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
       }
   })
   createActivity.addCountries(countries)    // le agrego los paises a las actividades
-  res.status(200).send('Activity created successfully!!!')
+  res.status(200).send("Activity created successfully!!!")
 
 })
 

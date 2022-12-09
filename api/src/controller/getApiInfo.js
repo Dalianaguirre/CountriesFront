@@ -10,12 +10,12 @@ async function getApiInfo() {
             flag: c.flags[0],
             continent: c.continents[0],
             capital: c.capital ? c.capital[0] : 'Not information',
-            subregion: c.subregion,
+            subregion: c.subregion ? c.subregion[0] : 'Not information',
             area: c.area,
             population: c.population
         }
     })
-    const guardar = () => {
+    const keep = () => {
       apiInfo.map(i => {
           Country.findOrCreate({
               where: {
@@ -32,9 +32,9 @@ async function getApiInfo() {
               },
           }).catch((err) => { console.log(err) });
       })
-  }
-  guardar()
-  return apiInfo;
+    }
+    keep()
+    return apiInfo;
 };
 
 const getDbInfo = async () => {

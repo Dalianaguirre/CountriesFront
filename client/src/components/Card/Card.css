@@ -5,17 +5,18 @@
   margin: 4px;
   background-color: #000d23dd;
   border-radius: 6px;
-  box-shadow: 0 10px 27px #9a999983;
+  box-shadow: 0 0px 30px #bbbbbae5;
   width: 250px;
   height: 310px;
   margin-bottom: 30px;
+  text-decoration: none;
 }
 
 .cardHeader img {
   border-radius: 10px;
-  margin-top: 5px;
-  width: 230px;
-  height: 140px;
+  margin-top: 3px;
+  width: 245px;
+  height: 130px;
   object-fit: cover;
   padding: 6px;
 }
@@ -24,7 +25,7 @@
   background-color: transparent;
   border-style: none;
   font-size: 26px;
-  color: rgba(255, 255, 255, 0.932);
+  color: rgba(255, 255, 255, 0.853);
   font-family: "Patrick Hand", sans-serif;
   line-height: 1;
   cursor: pointer;
@@ -36,7 +37,6 @@
   position: center;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
   height: 28px;
   align-items: center;
   font-family: "Handlee", sans-serif;
@@ -45,6 +45,7 @@
   justify-content: center;
   margin-top: 10px;
   padding: 0px;
+  font-weight: bolder;             /*negrita*/
 }
 
 .cardBody {

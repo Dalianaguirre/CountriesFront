@@ -20,69 +20,28 @@
   font-weight: bold;
   color: #ffffffef;
   text-shadow: 8px 5px 8px #000000;
-  margin-bottom: 0px;
+  margin-bottom: -10px;
+  margin-top: 22px;
 }
-
-.create {
-  width: 99vw;
-  height: 15vh;
-  margin-top: 0px;
-  margin-left: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.createTitle {
-  border: 3px solid #fffffe; /*anchura, estilo y color borde*/
-  padding: 1px 14px;
-  color: rgb(252, 251, 251);
-  background: #5d7514f7;
-  width: 45px;
-  height: 33px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-family: sans-serif;
-  text-align: center;  
-  cursor: pointer;
-  font-size: 14px;
-  line-height: 1;
-  border-radius: 6px;
-  border: transparent;
-  letter-spacing: 0.4px;
-  min-width: 160px;
-  font-weight: bolder;
-}
-.createTitle:hover {
-  color: #fff;
-  background-color: #000000d8;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  transform: translateY(-2px);
-}
-.createTitle:active {
-  box-shadow: none;
-  transform: translateY(0);
-} 
-
 
 .btnReload {
   width: 99vw;
   height: 15vh;
-  margin-top: -70px;
+  margin-top: -10px;
   margin-left: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
+
 .button {
-  border: transparent; /*anchura, estilo y color borde*/
+  border: 2px solid #9797947a; /*anchura, estilo y color borde*/
   padding: 1px 14px;
-  color: rgb(252, 251, 251);
-  background: #bc9618;
-  width: 45px;
+  color: rgba(252, 251, 251, 0.937);
+  background: rgb(48, 76, 28);
   height: 33px;
-  font-weight: bolder;
+  min-width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,23 +49,67 @@
   font-family: sans-serif;
   text-align: center;  
   cursor: pointer;
-  font-size: 14px;
-  line-height: 1;
+  font-size: 15px;
+  line-height: 1.1;
   border-radius: 6px;
   letter-spacing: 0.4px;
-  min-width: 160px;
+  box-shadow: 0 2px 25px #000000;
   }
+
 .button:hover {
   color: #fff;
   background-color: #000000d3;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  box-shadow: 0 2px 25px #ffffff;
   transform: translateY(-2px);
 }
+
 .button:active {
   box-shadow: none;
   transform: translateY(0);
 } 
 
+.create {
+  width: 99vw;
+  height: 15vh;
+  margin-top: -50px;
+  margin-left: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.createButton {
+  border: 2px solid #97979471; /*anchura, estilo y color borde*/
+  padding: 1px 14px;
+  color: rgba(252, 251, 251, 0.931);
+  background: rgb(48, 76, 28);
+  height: 33px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  /*text-shadow: 2px 2px 2px #ffffff62;*/
+  font-family: sans-serif;
+  text-align: center;  
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1.1;
+  border-radius: 6px;
+  /*border: transparent;*/
+  letter-spacing: 0.4px;
+  box-shadow: 0 2px 25px #000000;
+}
+.createButton:hover {
+  color: #fff;
+  background-color: #000000d8;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 25px #ffffff;
+}
+.createButton:active {
+  box-shadow: none;
+  transform: translateY(0);
+} 
 
 /* .filterCont {
   display: flex;
@@ -119,13 +122,14 @@
 } */
 .selectBar {
   margin-top: 60px;
-  line-height: 1.6px;
+  line-height: 1px;
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   color: rgb(0, 0, 0);
-  padding: 5px 12px;
+  padding: 6px 30px 6px;
   margin-right: 10px;
   border-radius: 6px;
+  background-color: #ffffffdf;
 }
   
   /* 
@@ -140,11 +144,14 @@
 
 
 .selectBar:hover {
-  border: 4px solid #ecdd15;
+  border: 2px solid #ffff01d2;
+  background-color: #000000a7;
+  color: rgb(235, 235, 235);
 }
 .selectBar:focus {
   border-color: #dee1e2;
   background: #eae9e8e4;
+  color: rgb(0, 0, 0);
 }
 .selectBar option {
   margin-top: 100px;
@@ -162,7 +169,6 @@
   text-align: center;  
 }
 
-
 .cardContainer {
   margin: auto;
   margin-top: 45px;
@@ -171,9 +177,6 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-self: center;
-}
-.linkToDet {
-  text-decoration: none;
 }
 
 .barra-footer {

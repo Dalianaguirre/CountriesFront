@@ -2,8 +2,9 @@ ul.pagination {
   display: inline-block;
   padding: 0;
   margin: auto;
-  margin-top: 34px;
-  background-color: rgba(248, 248, 248, 0.918);
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color:#07053ad7;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -13,7 +14,8 @@ ul.pagination li {
 }
 
 ul.pagination li a {
-  color: rgb(0, 0, 0);
+  color: rgba(255, 255, 255, 0.84);
+  font-weight: bolder;
   float: left;
   padding: 8px 16px;
   text-decoration: none;
@@ -25,6 +27,7 @@ ul.pagination li a.active {
 }
 
 ul.pagination li a:hover:not(.active) {
-  background-color: rgb(96, 102, 76);
+  background-color: rgba(255, 255, 255, 0.89);
+  color: rgba(0, 0, 0, 0.904);
   border-radius: 10px;
 }

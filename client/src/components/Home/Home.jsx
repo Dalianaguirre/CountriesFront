@@ -39,9 +39,26 @@ export default function Home(){
     dispatch(getCountries())
   };
 
+  // Ordenar alfabetica/
+  function handleOrderAlphabetically(e){
+    e.preventDefault();
+    dispatch(orderCountriesByName(e.target.value));
+    setCurrentPage(1);
+    setOrder(`Ordered ${e.target.value}`)            //modifico el estado local y renderizo
+  };
+  
+  // Ordenar por población/
+  function handleOrderPopulation(e){
+    e.preventDefault();
+    dispatch(orderCountriesByPopulation(e.target.value));
+    setCurrentPage(1);
+    setOrder(`Ordered ${e.target.value}`)            //modifico el estado local y renderizo
+  };
+
   // Filtrar por continente
   function handleFilterContinent(e){
     dispatch(filterCountriesByContinent(e.target.value))
+    setCurrentPage(1)
   };
 
   // Filtrar por actividad
@@ -55,53 +72,35 @@ export default function Home(){
     }
   };
 
-  // Ordenar alfabetica/
-  function handleOrderAlphabetically(e){
-    e.preventDefault();
-    dispatch(orderCountriesByName(e.target.value));
-    setCurrentPage(1);
-    setOrder(`Ordered ${e.target.value}`)            //modifico el estado local y renderizo
-  };
-
-  // Ordenar por población/
-  function handleOrderPopulation(e){
-    e.preventDefault();
-    dispatch(orderCountriesByPopulation(e.target.value));
-    setCurrentPage(1);
-    setOrder(`Ordered ${e.target.value}`)            //modifico el estado local y renderizo
-  };
-
-
-
 
   return (
     <div className="home">
       <h1 className="title">COUNTRIES</h1>
 
-      <div className="create">
-        <Link to= '/activities' className="createTitle">Create tourist activity</Link>
-      </div>
-      
       <div className="btnReload">
         <button className="button" onClick={handleClick}>Reload all countries</button>
       </div>
 
+      <div className="create">
+        <Link to= '/activities' className="createButton">Create tourist activity</Link>
+      </div>
+      
       <SearchBar/>
 
       <div>
-      <select className="selectBar" onChange={(e) => handleOrderAlphabetically(e)}>
-          <option defaultValue>Order A-Z / Z-A</option>
+      <select className="selectBar" value={order} onChange={(e) => handleOrderAlphabetically(e)}>
+          <option defaultValue>Order alphabetically</option>
           <option value='asc'>Ascending</option>
           <option value='desc'>Descending</option>
         </select>
 
-        <select className="selectBar" onChange={(e) => handleOrderPopulation(e)}>
+        <select className="selectBar" value={order} onChange={(e) => handleOrderPopulation(e)}>
           <option defaultValue>Order by population</option>
           <option value='lower'>Lower to higher</option>
           <option value='higher'>Higher to lower</option>
         </select>
 
-        <select className="selectBar" onChange={(e) => handleFilterContinent(e)}>
+        <select className="selectBar" value={order} onChange={(e) => handleFilterContinent(e)}>
           <option defaultValue>Filter by continent</option>
           <option value="Africa">Africa</option>
           <option value="Antarctica">Antarctica</option>
@@ -112,7 +111,7 @@ export default function Home(){
           <option value="South America">South America</option>
         </select>
 
-        <select className="selectBar" onChange={(e) => handleFilterActivity(e)}>
+        <select className="selectBar" value={order} onChange={(e) => handleFilterActivity(e)}>
           <option value="Filter by activity">Filter by activity</option>
           {activities?.map((e) => 
           <option value={e.name} id={e.id}>{e.name}</option>)}
@@ -122,7 +121,7 @@ export default function Home(){
       <div className="cardContainer">
         {allCountries.length > 0 ? currentCountries.map((el) => { 
           return ( 
-            <Link className="linkTodet" key={el.id} to={`countries/${el.id}`}>
+            <Link key={el.id} to={`countries/${el.id}`}>
               <Card
               key={el.id} 
               id={el.id} 

@@ -10,7 +10,7 @@ export default function Card({ image, name, id, continent }){
         <img src={image} alt="img not found"/>
         <button className="span">{name}</button>
         <div className="cardBody0">{id}</div>
-        <div className="cardBody">{continent}</div>
+        <div className="cardBody">Continent:<br></br>{continent}</div>
       </div>
     </div>
     </React.Fragment>

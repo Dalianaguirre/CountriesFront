@@ -41,8 +41,8 @@ export function getActivities() {
             type: 'GET_ACTIVITIES', 
             payload: json.data
           })
-      } catch(err) {
-          console.log(err)
+      } catch(error) {
+          console.log(error)
       }
   }
 };
@@ -76,13 +76,31 @@ export function getCountryDetail(id) {
         type: 'GET_DETAIL',
         payload: json.data
       })
-    } catch(err) {
-      console.log(err)
+    } catch(error) {
+        console.log(error)
     }
   }
 };
 
+export function restartDetail() {
+  return (dispatch) => {
+    dispatch({ 
+      type: 'RESET'
+    })
+  }
+}
 
+export function postActivity (payload) {                   //payload lo que va a llegar en el front
+  return async function() {
+      const create = await axios.post("http://localhost:3001/activities", payload);
+      console.log(create)
+      return (dispatch) => {
+        dispatch({ 
+        type: 'POST_ACTIVITY'
+      })
+    }
+  }
+}
 
 
 

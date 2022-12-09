@@ -1,0 +1,96 @@
+.actContainer {
+  width: 100%;
+  height: 100%;
+  background: url('https://cdn.pixabay.com/photo/2022/12/06/00/25/beach-7637946_960_720.jpg') no-repeat 50% 50%;
+  background-size: cover;
+  position: fixed;
+  display: table;
+  margin: auto;
+  color: #ffffffc8
+}
+
+.activityBox {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #000d23dd;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(1px);
+  width: 520px;
+  height: 520px;
+  margin: 4rem auto;
+  font-family: sans-serif;
+}
+
+.formTitle {
+  margin: 0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.formInput {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  margin: 0 5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;  
+}
+
+.formWrite {
+  border-radius: 0.5rem;
+  font-family: sans-serif;
+  height: 30px;
+  padding: 0 .5rem;
+  outline: none;
+  background: #d1d0d0;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.formWrite::placeholder {
+  color: #000
+}
+
+.error {
+  color: rgb(220, 70, 0);
+  font-weight: bolder; 
+  background-color: #aeaeae;
+  width: 120%;
+  margin: 1.3rem auto;
+  padding: .6rem;
+  border-radius: .6rem;
+}
+
+.formSelect {
+  width: 100%;
+  background-color: #d1d0d0;
+  outline: none;
+  border-radius: .6rem;
+  padding: 0 .5rem;
+  font-family: sans-serif;
+}
+
+.formSelect op {
+  margin: auto;
+  margin-top: 45px;
+  display: flex;
+  width: 1270px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-self: center;
+}
+
+.formButton {
+  background-color: rgb(1, 31, 114);
+  color:rgba(250, 235, 215, 0.914);
+  border: none;
+  border-radius: .6rem;
+  padding: .5rem;
+  transition: .6s;
+  font-family: sans-serif;
+}
+
+.formButton:hover {
+  background-color: #aeaeae;
+  cursor: pointer;
+}

@@ -1,21 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
 .containerr {
-  overflow: hidden;
-  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.unccd.int/sites/default/files/styles/towebp/public/2022-02/Country_profiles_4_0.jpg.webp') no-repeat 50% 50%;
   background-size: cover;
-  background-attachment: fixed;
-  overflow: hidden;
-  background-image: linear-gradient(
-      to right,
-      rgb(12, 1, 20),
-      rgba(31, 11, 41, 0.644)
-    ),
-    url('https://cdn.pixabay.com/photo/2015/08/19/05/31/globe-895580_960_720.jpg');
+  position: fixed;
+  margin: auto;
 }
 
-.cardDetailL {
-  width: 1350px;
-  height: 500px;
-  background: transparent;
+.cardDetail {
+  width: 950px;
+  height: 600px;
   position: absolute;
   margin: auto;
   left: 0;
@@ -23,9 +21,23 @@
   top: 10%;
   bottom: 0;
   border-radius: 10px;
-  box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 0px 60px #000000e5;
+  background-color: #000d23dd;
 }
 
+.cardLeft {
+  width: 40%;
+  height: 500px;
+  float: left;
+  overflow: hidden;
+}
+
+.imgDetail {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  position: relative;
+}
 
 .cardRight {
   width: 58%;
@@ -35,20 +47,64 @@
   border-radius: 0 10px 10px 0;
 }
 
-
-
-.backButton {
-  margin-top: 650px;
-  margin-bottom: 40px;
-  border-radius: 15px;
-  border-style: none;
-  cursor: pointer;
-  background-color: #0b024cce;
-  font-family: "Gruppo";
-  font-size: 1.5rem;
+.titleDetail {
+  font-size: 22px;
+  color: rgb(253, 247, 241);
+  text-align: left;
+  padding: 0 0 0 27px;
+  letter-spacing: 1px;
+  font-family: "Patrick Hand", sans-serif;
   font-weight: bolder;
-  height: 45px;
-  width: 85px;
-  justify-content: center;
+  line-height: 0.9;
 }
 
+.cardRight ul {
+  list-style-type: none;
+  padding: 0 250px 0 0;
+  position: relative;
+}
+
+.cardRight ul li {
+  display: flex;
+  color: #000000;
+  font-size: 18px;
+  padding: 0 0 9px 40px;
+  text-align: justify;
+  font-family: "Handlee", sans-serif;
+  font-weight: bolder;
+  word-spacing: 3px;
+  line-height: 0.9;
+  color: rgba(255, 255, 244, 0.905);
+}
+
+.cardRight p {
+  font-size: 15px;
+  padding: 0 40px 0 40px;
+  word-spacing: 1px;
+  margin: 10px 0 10px 0;
+  line-height: 17px;
+  text-align: justify;
+}
+
+.backButtonDet {
+  border-radius: 9px;
+  text-decoration: none;
+  color: #f9f3f4;
+  font-family: "Roboto",sans-serif;
+  font-weight: bold;
+  border: 1px solid;
+  padding: 7px 13px;
+  margin-top: 666px;
+  background-color: #000000d7; /*color botón*/
+  box-shadow: 6px 8px 2px 2px rgba(0, 0, 0, 0.451);
+  cursor: pointer;
+  position: relative;
+  transition: .6s;
+}
+
+.backButtonDet:hover {
+  color: #fff;
+  background-color: #000000d3;
+  box-shadow: 0 2px 25px #ffffff;
+  transform: translateY(-2px);
+}

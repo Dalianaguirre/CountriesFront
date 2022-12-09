@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { getCountryDetail } from "../../redux/actions";
-import Loading from '../Loading/Loading';
+import { getCountryDetail, restartDetail } from "../../redux/actions";
+//import Loading from '../Loading/Loading';
 import "./Detail.css";
 
 export default function Detail(props) {
@@ -13,50 +13,57 @@ export default function Detail(props) {
 
   useEffect(() => {                                           //traigo el detalle según el id del pais               
     dispatch(getCountryDetail(id));
-  }, [dispatch, id]);
+    dispatch(restartDetail())                                 //limpio mi ruta para que no aparezca el detail anterior
+  }, [dispatch]);
 
-  let myCountry = useSelector((state) => state.detail);     //traigo mi pais "detalle" del reducer
+  let myCountry = useSelector((state) => state.detail);       //traigo mi pais "detalle" del reducer
   
   return (
-    
-      <div className="containerr">
-        <h1 className="title">COUNTRY</h1>
-        <div className="cardDetailL">
-        
-        { myCountry[0] ? 
-        <div className="cardRight">
-          <img src={myCountry[0]?.flag} alt={myCountry[0]?.flag}/>
-          <h1>{myCountry[0].name}</h1>
-          <h4>Continent:{myCountry[0].continent}</h4>
-          <h4>Capital:{myCountry[0].capital}</h4>
-          <h4>Subregion:{myCountry[0].subregion}</h4>
-          <h4>Area:{myCountry[0].area + " km2"}</h4>
-          <h4>Population:{myCountry[0].population}</h4>
-          <h3>Id:{myCountry[0].id}</h3>
+    <div>
+        <div className="containerr">
+            <header className="header">
+            <h1 className="title">COUNTRY</h1>
+            </header>
+            <div className="cardDetail">
+
+                <div className="cardLeft">
+                    <img className="imgDetail" src={myCountry.flag} alt = ""/>
+                </div>
+
+                <div className="cardRight">
+                    <h1 className="titleDetail">{myCountry.name}</h1>
+                    <ul>
+                      <li>Id: {myCountry.id}</li>
+                      <li>Continent: {myCountry.continent}</li>
+                      <li>Capital: {myCountry.capital}</li>
+                      <li>Subregion: {myCountry.subregion}</li>
+                      <li>Area: {myCountry.area} km²</li>
+                      <li>Population: {myCountry.population} people</li>
+                    </ul>
+                    
+                    <div> {myCountry.activities?.map(act => {
+                      return (
+                        <div>
+                          <h1 className="titleDetail">Tourist activity</h1>
+                          <ul>
+                            <li>Name: {act.name}</li>
+                            <li>Difficulty: {act.difficulty}</li>
+                            <li>Duration: {act.duration} minutes</li>
+                            <li>Season: {act.season}</li>
+                          </ul>
+                        </div>
+                      )
+                    })}
+                    </div>
+                </div>
+
+            </div>
         </div>
-          : 
-          <Loading />
-        }
-
-        <div>
-              {
-                myCountry[0]?.activities.map(a => 
-                  <div key={a.name}>
-                    <h2>{a.name}</h2>
-                    <h4>difficulty:{a.difficulty}</h4>
-                    <h4>duration:{a.duration} hours</h4>
-                    <h4>season:{a.season}</h4>
-                  </div>
-                )
-              }
-        </div>
-
-          <Link to="/home" className="backButton">
-            <button>Back</button>
-          </Link>
-
-          </div>
-      </div>
-
-  );
+        <Link to="/home">
+            <button className="backButtonDet">Back home</button>
+        </Link>
+    </div>
+);
 }
+
+

@@ -17,7 +17,7 @@ export default function SearchBar() {
 
   function handleOnSubmit(e) {
     e.preventDefault();
-    if (name.length === 0) return alert('You should introduce a country name');
+    if(name.length === 0) return alert('You should introduce a country name');
     dispatch(searchNameCountry(name));       //despacho la accion con el name que escribe el usuario
     setName("")                              //LIMPIO LA CASILLITA DEL INPUT CUANDO CAMBIO EL ESTADO POR EJ. CUANDO REFRESCO ALLCOUNTRIES
   }

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { getCountryDetail, restartDetail } from "../../redux/actions";
+import { getCountryDetail, rebootDetail } from "../../redux/actions";
 //import Loading from '../Loading/Loading';
 import "./Detail.css";
 
@@ -13,7 +13,7 @@ export default function Detail(props) {
 
   useEffect(() => {                                           //traigo el detalle según el id del pais               
     dispatch(getCountryDetail(id));
-    dispatch(restartDetail())                                 //limpio mi ruta para que no aparezca el detail anterior
+    dispatch(rebootDetail())                                 //limpio mi ruta para que no aparezca el detail anterior
   }, [dispatch]);
 
   let myCountry = useSelector((state) => state.detail);       //traigo mi pais "detalle" del reducer

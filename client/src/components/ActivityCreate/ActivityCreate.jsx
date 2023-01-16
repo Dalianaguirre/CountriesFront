@@ -11,6 +11,9 @@ export function validate(input) {
     if (!input.name) {
       errors.name = "Name is required";
     }
+    // else if(input.countryId){
+    //   errors.countryId = "Already exist"
+    // }
     else if(isNaN(input.name) !== true){
       errors.name = 'Name cannot be a number'
     }    

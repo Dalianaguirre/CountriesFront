@@ -17,33 +17,38 @@ export default function Home(){
   // estado local para ordenamiento
   const [order, setOrder] = useState("")                                       
   // estado local para paginado
-  const [currentPage, setCurrentPage] = useState(1)                            
-  const [countriesPerPage, setCountriesPerPage] = useState(10)                 
-  const iOfLastCountry = currentPage * countriesPerPage                        // 10*1 = 10
-  const iOfFirstCountry = iOfLastCountry - countriesPerPage                    // 10-10 = 0
-  const currentCountries = allCountries.slice(iOfFirstCountry, iOfLastCountry) // currentCountries tiene los 10 paises que estan en la página actual, corto el array allCountries de a 10
+  const [currentPage, setCurrentPage] = useState(1)
+  // estado local para que una página contenga 10 paises
+  const [countriesPerPage, setCountriesPerPage] = useState(10)
+  // índice del último pais                 
+  const iOfLastCountry = currentPage * countriesPerPage              // 10*1 = 10
+  // índice del primer país
+  const iOfFirstCountry = iOfLastCountry - countriesPerPage          // 10-10 = 0
+  // current es los 10 paises que tiene la página actual
+  const currentCountries = allCountries.slice(iOfFirstCountry, iOfLastCountry) // corto el array allCountries de a 10
                                                    //0             //10
   const pagination = (pageNumber) => {
     setCurrentPage(pageNumber)
   }
 
   // Despacho las acciones o pedidos de orden / filtros cada vez que se actualiza uno de sus values y/o cuando se hace click en la option 
-  useEffect(() => {                                                            // traigo del estado los countries cuando el componente se monta
-    dispatch(getCountries());                                                  // despacho la accion
+  useEffect(() => {                                                  // traigo del estado los countries cuando el componente se monta
+    dispatch(getCountries());                                        // despacho la accion
     dispatch(getActivities());
-  }, [dispatch])                                                               // se monta y ejecuta cuando se le pase o suceda un dispatch
+  }, [dispatch])                                                     // se monta y ejecuta cuando se le pase o suceda un dispatch
 
   // Recargar todos los countries
   function handleClick(e) {
     e.preventDefault()
     dispatch(getCountries())
+    setCurrentPage(1);                               //seteo pág. en la 1
   };
 
   // Ordenar alfabetica/
   function handleOrderAlphabetically(e){
     e.preventDefault();
     dispatch(orderCountriesByName(e.target.value));
-    setCurrentPage(1);
+    setCurrentPage(1);                               
     setOrder(`Ordered ${e.target.value}`)            //modifico el estado local y renderizo
   };
   
@@ -68,7 +73,7 @@ export default function Home(){
         dispatch(getCountries());
     }else {
         dispatch(filterCountriesByActivity(e.target.value));
-        setCurrentPage(1);         //seteo la pág en la 1
+        setCurrentPage(1);         
     }
   };
 

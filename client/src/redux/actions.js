@@ -21,7 +21,7 @@ export function searchNameCountry(name){             //lo que me llega por query
         payload: json.data
       })
     } catch(error) {
-      console.log(error)
+      console.log("Country name not found")
     }
   }
 };
@@ -82,7 +82,7 @@ export function getCountryDetail(id) {
   }
 };
 
-export function restartDetail() {
+export function rebootDetail() {
   return (dispatch) => {
     dispatch({ 
       type: 'RESET'

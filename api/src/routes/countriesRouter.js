@@ -21,13 +21,17 @@ const router = Router();
 router.get('/', async (req, res) => {
   const { name } = req.query
   let countriesTotal = await getDbInfo();
-  if (name) {
+  try{
+    if (name) {
       let countryName = await countriesTotal.filter(el => el.name.toLowerCase().includes(name.toLowerCase()))
       countryName.length ?
           res.status(200).send(countryName) :
           res.status(404).send('Country not found');
-  } else {
-      res.status(200).send(countriesTotal);
+    } else {
+      res.status(200).send(countriesTotal);          // no tengo name, mando todo
+    }
+  }catch (error) {
+  return res.status(404).json({ message: "Country not found" })
   }
 })
 
@@ -41,13 +45,12 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res, next) =>{
   const { id } = req.params;
-  let aux = id.toUpperCase()                                // valor en mayúsculas ej. id: COL
+  let aux = id.toUpperCase()                                // valor en mayús.. id: COL
   try{
-    const countryId = await Country.findByPk(aux, {
+    const countryId = await Country.findByPk(aux, {         // con el findByPk recibo un id y busco ese id
       include: Activity
     })
-  res.json(countryId)
-
+    res.json(countryId)
   }catch(err){
       next(err)
   }

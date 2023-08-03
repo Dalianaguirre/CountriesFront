@@ -149,7 +149,7 @@ export default function Home(){
       />
 
       <div class="barra-footer">
-          &copy; Soy Henry - 2022
+          &copy; Dalian Aguirre - 2022
       </div>
     </div>
 

@@ -19,6 +19,15 @@
   top: 0
 }
 
+@media (max-width: 400px) {
+  .full {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 10px;
+  }
+}
+
 .full-inner {
   width: 100%;
   vertical-align: middle;

@@ -24,14 +24,13 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    font-size: 10px;
   }
-}
+}                                        
 
 .full-inner {
   width: 100%;
   vertical-align: middle;
-  display: table-cell;
+  display: table-cell;                                        
 }
 
 .phrase {
@@ -54,14 +53,21 @@
   text-align: center;
 }
 
-.content h1 {
+.content h2 {
   font-family: "Passion One", sans-serif;
-  font-size: 500%;
+  font-size: 80px;
   /* font-weight: bold; */
   color: #ffffffef;
   text-shadow: 8px 5px 8px #000000;
   margin-top: 20px;
 }
+
+@media (max-width: 400px) {
+  .content h2 {
+    font-size: 60px;
+    padding: 10px;
+  }
+}  
 
 .botton {
   border-radius: 9px;
